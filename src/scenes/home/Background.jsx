@@ -55,7 +55,7 @@ const VideoBackground = ({ desktopVideoSrc, mobileVideoSrc, children }) => {
       <Box
         style={{
           position: "absolute",
-          bottom: 20,
+          bottom: 40,
           left: "50%",
           transform: "translateX(-50%)",
           textAlign: "center",
