@@ -25,6 +25,8 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useSwipeable } from "react-swipeable";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import Loading from "../global/Loading";
+import DownloadIcon from "@mui/icons-material/Download";
+import DownloadDoneIcon from "@mui/icons-material/DownloadDone";
 
 const Details = () => {
   const { url } = useParams();
@@ -252,6 +254,8 @@ const Details = () => {
             width: isMobile ? "100%" : "auto",
             mt: 2,
           }}
+          startIcon={<DownloadIcon />}
+          href="https://www.bmw.com.mx/content/dam/bmw/marketMX/bmw_com_mx/Descargas/fichas-tecnicas-2024/mayo/serie-3/Ficha%20T%C3%A9cnica%20BMW%20330e%202024.pdf"
         >
           Datos Técnicos
         </Button>
