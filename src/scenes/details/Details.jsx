@@ -100,9 +100,7 @@ const Details = () => {
                   alt={image?.attributes?.name}
                   loading="lazy"
                   style={{ cursor: "pointer" }}
-                />
-                {console.log(image?.data?.attributes?.formats?.small?.url)}
-                
+                />                
               </ImageListItem>
             ))}
           </ImageList>
