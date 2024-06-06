@@ -1,9 +1,16 @@
-import React from "react";
-import { Box, useMediaQuery } from "@mui/material";
+import React, { useRef } from "react";
+import { Box, IconButton, useMediaQuery } from "@mui/material";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import "../../index.css";
 
 const VideoBackground = ({ desktopVideoSrc, mobileVideoSrc, children }) => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const videoSrc = isMobile ? mobileVideoSrc : desktopVideoSrc;
+  const scrollToRef = useRef(null);
+
+  const handleScrollDown = () => {
+    scrollToRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <Box
@@ -45,6 +52,29 @@ const VideoBackground = ({ desktopVideoSrc, mobileVideoSrc, children }) => {
       >
         {children}
       </Box>
+      <Box
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: "50%",
+          transform: "translateX(-50%)",
+          textAlign: "center",
+        }}
+      >
+        <IconButton
+          color="primary"
+          onClick={handleScrollDown}
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            color: "white",
+            borderRadius: "50%",
+            animation: "bounce 2s infinite",
+          }}
+        >
+          <ArrowDownwardIcon />
+        </IconButton>
+      </Box>
+      <Box ref={scrollToRef} style={{ position: 'relative', top: '100vh' }}></Box>
     </Box>
   );
 };

@@ -13,14 +13,6 @@ const Home = () => {
         desktopVideoSrc={videoUrl}
         mobileVideoSrc={videoUrlP}
       >
-        {/* <Box>
-          <Typography variant="h1" color={shades.blue[400]}>
-            RUVA
-          </Typography>
-          <Typography variant="h2" color={shades.blue[500]}>
-            PUTO
-          </Typography>
-        </Box> */}
       </Background>
       <VehiclesList />
     </Box>
